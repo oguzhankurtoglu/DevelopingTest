@@ -24,7 +24,7 @@ public class CamerFollow : MonoBehaviour
         {
             Vector3 destination = target.position + _offset;
             Vector3 smooth = Vector3.Lerp(transform.position, destination, _smoothRatio);
-            transform.position = new Vector3(smooth.x, transform.position.y, smooth.z);
+            transform.position = new Vector3(smooth.x, smooth.y, smooth.z);
         }
     }
 }

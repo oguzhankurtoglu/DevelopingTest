@@ -37,7 +37,7 @@ public class AIController : MonoBehaviour
         currentNode = _myWay[_nodeCount];
         transform.LookAt(currentNode.transform.position);
     }
-    private void Update()
+    private void FixedUpdate()
     {
         if (GameManager.state==GameManager.State.Running)
         {
@@ -72,7 +72,7 @@ public class AIController : MonoBehaviour
         {
             if (currentNode != _myWay[_myWay.Count-1] && _aiCanMove)
             {
-                transform.position += (transform.forward) * (_speed *Time.smoothDeltaTime);
+                transform.position += (transform.forward) * (_speed *Time.deltaTime);
             }
             //Vector3 pos = Vector3.MoveTowards(transform.position, currentNode.transform.position, _speed * Time.fixedDeltaTime);
             //_aiRigidbody.MovePosition(pos);
@@ -87,7 +87,7 @@ public class AIController : MonoBehaviour
         }
         if (_look)
         {
-           // transform.LookAt(temp);
+            //transform.LookAt(temp);
         }
     }
     private void ResetValues()
